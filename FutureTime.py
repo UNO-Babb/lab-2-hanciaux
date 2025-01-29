@@ -22,15 +22,22 @@ def main():
   #Calculate the time after the user-supplied time has passed.
   hours=int(hours) 
   minutes=int(minutes)
-  newHour=(currentHour + hours)
+
   newMinute=(currentMinute + minutes)
+  excess=newMinute//60
+  newHour=(currentHour + hours + excess)
+  
   #Do not use any if statements in calculating the time.
 
   #Output the future time in standard format "HH:MM"
   newHour = (newHour%12)
   newMinute = (newMinute%60)
-  newHour = str(newHour)
-  newMinute = str(newMinute)
-  print(newHour + ":" + newMinute)
+  strHour = str(newHour)
+  strMinute = str(newMinute)
+  if newMinute < 10:
+    strMinute = "0" + strMinute
+  if newHour == 0:
+    strHour = "12"
+  print(strHour + ":" + strMinute)
 if __name__ == '__main__':
   main()
