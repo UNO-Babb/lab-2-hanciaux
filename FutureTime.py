@@ -20,7 +20,7 @@ def main():
   #Ask user for minutes
   minutes = input("How many minutes? ")
   #Calculate the time after the user-supplied time has passed.
-  hours=int(hours)
+  hours=int(hours) 
   minutes=int(minutes)
   newHour=(currentHour + hours)
   newMinute=(currentMinute + minutes)
